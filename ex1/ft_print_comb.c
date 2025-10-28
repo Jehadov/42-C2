@@ -21,8 +21,10 @@ void ft_print_comb(void)
 	while(i < 790)
 	{
 		repeat(i);
+		if (i != 789)	
+			write(1 , ", ", 2);
+		else write(1 , "\n", 2);
 		i++;
-		if (i < 789)	write(1 , ", ", 2);
 	}
 }
 
