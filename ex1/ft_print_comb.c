@@ -1,28 +1,34 @@
 #include <unistd.h>
 
+void  print(char digit)
+{
+	write(1, &digit, 1);
+}
+
+void repeat(int nb)
+{
+	if (nb == 0)
+		print('0');
+	
+	if(nb >= 10) repeat(nb / 10);
+	print( (nb % 10) + '0');
+}
 void ft_print_comb(void)
 {
-	int	nb;
-	int     i;
-	char    Convert[3];
-	int     digit;
-	i = 0;
+	int	i;
 	
+	i = 0;
 	while(i < 790)
 	{
-		nb = i;
-		int j = 0;
-	    while(nb > 0)
-		{
-			digit = nb % 10;
-			nb = nb/10;
-			Convert[j++] = '0' + digit;
-		}
+		repeat(i);
 		i++;
-		write(1, &Convert[2], 1);
-		if(nb < 9)write(1, &Convert[1], 1);
-		if(nb < 99)write(1, &Convert[0], 1);
-		write(1, ", ", 2);
+		if (i < 789)	write(1 , ", ", 2);
 	}
+}
+
+
+void main()
+{
+	ft_print_comb();
 }
 

@@ -22,11 +22,5 @@ void	ft_putnbr(int nb)
 	
 }
 
-void main()
-{
-	// ft_putnbr(-12345);
-	// ft_putnbr(86);
-	ft_putnbr(-340);
-}
 
 
